@@ -11,11 +11,11 @@ export default function Cart() {
   const total = subtotal - discount;
 
   return (
-    <div className="container mx-auto p-8">
-      <h1 className="text-3xl font-bold mb-8 text-center">Shopping Cart</h1>
+    <div className="container mx-auto p-4 sm:p-8">
+      <h1 className="text-2xl sm:text-3xl font-bold mb-6 text-center">Shopping Cart</h1>
       {cart.length > 0 ? (
         <>
-          <div className="bg-white shadow-md rounded-lg p-6 mb-8">
+          <div className="bg-white shadow-md rounded-lg p-4 sm:p-6 mb-6">
             {cart.map(item => (
               <CartItem 
                 key={item.id} 
@@ -25,26 +25,26 @@ export default function Cart() {
               />
             ))}
           </div>
-          <div className="bg-white shadow-md rounded-lg p-6">
-            <h2 className="text-xl font-semibold mb-4">Cart Summary</h2>
-            <div className="flex justify-between mb-4">
+          <div className="bg-white shadow-md rounded-lg p-4 sm:p-6">
+            <h2 className="text-lg sm:text-xl font-semibold mb-4">Cart Summary</h2>
+            <div className="flex flex-col sm:flex-row sm:justify-between mb-4">
               <span className="font-medium">Subtotal:</span>
               <span className="font-medium">${subtotal.toFixed(2)}</span>
             </div>
             {discount > 0 && (
-              <div className="flex justify-between mb-4">
+              <div className="flex flex-col sm:flex-row sm:justify-between mb-4">
                 <span className="font-medium">Discount:</span>
                 <span className="font-medium">-${discount.toFixed(2)}</span>
               </div>
             )}
-            <div className="flex justify-between font-bold text-xl mb-6">
+            <div className="flex flex-col sm:flex-row sm:justify-between font-bold text-lg sm:text-xl mb-6">
               <span>Total:</span>
               <span>${total.toFixed(2)}</span>
             </div>
-            <Link href="/checkout"
-               className="bg-blue-600 text-white py-2 px-6 rounded-lg shadow-md hover:bg-blue-700 transition-colors duration-200 ease-in-out">
-                Proceed to Checkout
-              
+            <Link 
+              href="/checkout"
+              className="block bg-blue-600 text-white py-2 px-4 sm:py-2 sm:px-6 rounded-lg shadow-md hover:bg-blue-700 transition-colors duration-200 ease-in-out text-center">
+              Proceed to Checkout
             </Link>
           </div>
         </>

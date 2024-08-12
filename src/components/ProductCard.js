@@ -10,7 +10,7 @@ export default function ProductCard({ product, addToCart }) {
         />
         <div className="p-6 bg-white">
           <h2 className="text-2xl font-semibold mb-2">{product.title}</h2>
-          <p className="text-gray-700 mb-4">{product.description}</p>
+          {/* <p className="text-gray-700 mb-4">{product.description}</p> */}
           <p className="text-blue-600 text-2xl font-bold mb-4">${product.price.toFixed(2)}</p>
           <button
             onClick={() => addToCart(product)}
